@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>ListServlet</servlet-name>
+        <servlet-class>com.sjp.contactsys.servlet.ListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateContactServlet</servlet-name>
+        <servlet-class>com.sjp.contactsys.servlet.updateContactServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QueryContactServlet</servlet-name>
+        <servlet-class>com.sjp.contactsys.servlet.QueryContactServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteContactServlet</servlet-name>
+        <servlet-class>com.sjp.contactsys.servlet.DeleteContactServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddContactServlet</servlet-name>
+        <servlet-class>com.sjp.contactsys.servlet.AddContactServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListServlet</servlet-name>
+        <url-pattern>/listservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateContactServlet</servlet-name>
+        <url-pattern>/updatecontactservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QueryContactServlet</servlet-name>
+        <url-pattern>/querycontactservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteContactServlet</servlet-name>
+        <url-pattern>/deletecontactservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddContactServlet</servlet-name>
+        <url-pattern>/addcontactservlet</url-pattern>
+    </servlet-mapping>
+</web-app>
