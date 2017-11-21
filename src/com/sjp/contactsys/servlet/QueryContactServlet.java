@@ -21,6 +21,7 @@ public class QueryContactServlet extends HttpServlet {
         String id = request.getParameter("id");
         ContactDao contactDao = new ContactDaoImpl();
         Contact contact = contactDao.findById(id);
+
         if (contact != null) {
 
             PrintWriter writer = response.getWriter();

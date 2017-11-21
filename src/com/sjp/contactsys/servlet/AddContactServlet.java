@@ -17,10 +17,10 @@ public class AddContactServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         ContactDao contactDao = new ContactDaoImpl();
         String id = UUID.randomUUID().toString().replace("-", "");
         String name = request.getParameter("name");
-        System.out.println(name);
         String gender = request.getParameter("gender");
         String phone = request.getParameter("phone");
         String age = request.getParameter("age");

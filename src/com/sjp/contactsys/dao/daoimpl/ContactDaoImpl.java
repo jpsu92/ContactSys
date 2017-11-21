@@ -32,12 +32,12 @@ public class ContactDaoImpl implements ContactDao{
         String id = UUID.randomUUID().toString().replace("-", "");
         contact.setId(id);
         contactElem.addAttribute("id", id);
-        contactElem.addElement("name").addText(contact.getName());
-        contactElem.addElement("age").addText(Integer.toString(contact.getAge()));
-        contactElem.addElement("gender").addText(contact.getGender());
-        contactElem.addElement("phone").addText(contact.getPhone());
-        contactElem.addElement("email").addText(contact.getEmail());
-        contactElem.addElement("qq").addText(contact.getQq());
+        contactElem.addElement("name").setText(contact.getName());
+        contactElem.addElement("gender").setText(contact.getGender());
+        contactElem.addElement("age").setText(contact.getAge()+"");
+        contactElem.addElement("phone").setText(contact.getPhone());
+        contactElem.addElement("email").setText(contact.getEmail());
+        contactElem.addElement("qq").setText(contact.getQq());
 
         XMLUtil.write2Xml(doc);
     }
@@ -110,15 +110,16 @@ public class ContactDaoImpl implements ContactDao{
 
     @Override
     public Contact findById(String id) {
+        System.out.println("findById:"+id);
         Document doc = XMLUtil.getDocument();
         Element contactElem = (Element) doc.selectSingleNode("//contact[@id='"+  id +"']");
         if (contactElem != null){
-            String name = ((Element)contactElem.selectSingleNode("//name")).getText();
-            String age = ((Element)contactElem.selectSingleNode("//age")).getText();
-            String gender = ((Element)contactElem.selectSingleNode("//gender")).getText();
-            String phone = ((Element)contactElem.selectSingleNode("//phone")).getText();
-            String email = ((Element)contactElem.selectSingleNode("//email")).getText();
-            String qq = ((Element)contactElem.selectSingleNode("//qq")).getText();
+            String name = contactElem.elementText("name");
+            String age = contactElem.elementText("age");
+            String gender = contactElem.elementText("gender");
+            String phone = contactElem.elementText("phone");
+            String email = contactElem.elementText("email");
+            String qq = contactElem.elementText("qq");
             return new Contact(id, name, gender, Integer.parseInt(age), phone, email, qq);
         }
         return null;

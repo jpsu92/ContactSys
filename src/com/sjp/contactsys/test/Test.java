@@ -42,7 +42,7 @@ public class Test {
 
     @org.junit.Test
     public void testFindById(){
-        Contact contact = operator.findById("003");
+        Contact contact = operator.findById("852d4581b3824c95abbca537f05b6a1e");
         System.out.println(contact);
     }
 }

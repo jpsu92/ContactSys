@@ -30,6 +30,7 @@ public class XMLUtil {
             XMLWriter writer = new XMLWriter(out, format);
             writer.write(doc);
             writer.close();
+            out.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
